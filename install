@@ -2,13 +2,15 @@
 pkg install root-repo -y
 
 
-echo -e "\e[36m[+] Installing Required packages\e[0m"termux-setup-storage
+echo -e "\e[36m[+] Installing Required packages\e[0m"
+termux-setup-storage
 pkg update -y
 
 pkg upgrade -y
 pkg install wget
 pkg install git -y
 pkg install hashdeep -y
+pkg install tar -y
 pkg install x11-repo
 clear
 
@@ -29,7 +31,7 @@ sleep 2
 
 echo -e "\e[36m[+] Installing Termux-am\e[0m"
 pkg install termux-am -y &>/dev/null
-echo -e "\e[32m[âœ“] Termux-am Installed Successfully\e[0m"
+echo -e "\e[32m[✓] Termux-am Installed Successfully\e[0m"
 echo -e "\n"
 clear
 if [ -e $PREFIX/glibc ]; then
@@ -53,7 +55,7 @@ read i
 case "$i" in
 1)
     echo -e "\e[36m[+] Installing Boxvidra Box86 build\e[0m"
-    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc.box86.tar.xz https://github.com/shephard-dev/BOXVIDRA-EMULATOR/releases/download/Glibc/glibc.box86.tar.xz
+    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc.box86.tar.xz https://github.com/shephard-dev/BOXVIDRA-EMULATOR/releases/download/Glibc/Mangohub.glibc.box86.tar.xz
     sleep 2
     echo -e "\e[33m[i] Extracting Box86 build glibc...\e[0m"
     tar -xf /data/data/com.termux/files/usr/glibc.box86.tar.xz -C /data/data/com.termux/files/usr/
@@ -61,14 +63,13 @@ case "$i" in
     cp /data/data/com.termux/files/usr/glibc/opt/scripts/vidra /data/data/com.termux/files/usr/bin
     chmod +x /data/data/com.termux/files/usr/glibc/opt/scripts/*
     chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
-    chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
     rm /data/data/com.termux/files/usr/glibc.box86.tar.xz
     echo -e "\n"
-    echo -e "\e[32m[âœ“] Boxvidra Box86 build Installed Successfully.\e[0m"
+    echo -e "\e[32m[✓] Boxvidra Box86 build Installed Successfully.\e[0m"
     ;;
 2)
     echo -e "\e[36m[+] Installing Boxvidra Wow64 build\e[0m"
-    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc.wow64.tar.xz https://github.com/shephard-dev/BOXVIDRA-EMULATOR/releases/download/Glibc/glibc.wow64.tar.xz
+    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc.wow64.tar.xz https://github.com/shephard-dev/BOXVIDRA-EMULATOR/releases/download/Glibc/Mangohub.glibc.wow64.tar.xz
     sleep 2
     echo -e "\e[33m[i] Extracting Wow64 build glibc...\e[0m"
     tar -xf /data/data/com.termux/files/usr/glibc.wow64.tar.xz -C /data/data/com.termux/files/usr/
@@ -77,7 +78,7 @@ case "$i" in
     chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
     rm /data/data/com.termux/files/usr/glibc.wow64.tar.xz
     echo -e "\n"
-    echo -e "\e[32m[âœ“] Boxvidra Wow64 build Installed Successfully.\e[0m"
+    echo -e "\e[32m[✓] Boxvidra Wow64 build Installed Successfully.\e[0m"
     ;;
 *)
     return 1
@@ -93,14 +94,14 @@ apt-get upgrade -y
 pkg install wget -y
 pkg install root-repo -y
 apt-get -y --with-new-pkgs -o Dpkg::Options::="--force-confdef" upgrade
-echo -e "\e[32m[âœ“] Termux packages Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Termux packages Installed Successfully.\e[0m"
 echo -e "\n"
 clear
 
 echo -e "\e[36m[+] Installing Termux X11 packages...\e[0m"
 pkg install x11-repo -y &>/dev/null
 pkg install termux-x11-nightly -y &>/dev/null
-echo -e "\e[32m[âœ“] Termux X11 Packages Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Termux X11 Packages Installed Successfully.\e[0m"
 echo -e "\n"
 
 echo -e "\e[36m[+] Installing Boxvidra Emulator Packages...\e[0m"
@@ -114,7 +115,7 @@ pkg install hashdeep -y &>/dev/null
 pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android -y &>/dev/null
 apt install android-tools -y &>/dev/null
 pkg install python-tkinter -y &>/dev/null
-echo -e "\e[32m[âœ“] Boxvidra Emulator Packages Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Boxvidra Emulator Packages Installed Successfully.\e[0m"
 echo -e "\n"
 sleep 3
 clear
@@ -127,7 +128,7 @@ apt install xfce4-screenshooter -y
 apt install xfce4-taskmanager -y
 apt install xfce4-docklike-plugin -y
 apt install matchbox-keyboard -y
-echo -e "\e[32m[âœ“] Xfce4, Plugins, Tools, Packages, Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Xfce4, Plugins, Tools, Packages, Installed Successfully.\e[0m"
 echo -e "\n"
 sleep 3
 clear
@@ -142,7 +143,7 @@ pkg install vlc-qt -y
 pkg install abiword -y
 apt install ristretto -y
 echo -e "\n"
-echo -e "\e[32m[âœ“] Boxvidra Emulator Programs, Browsers, Other Applications Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Boxvidra Emulator Programs, Browsers, Other Applications Installed Successfully.\e[0m"
 clear
 sleep 3
 
@@ -184,7 +185,7 @@ case "$i" in
    clear
    echo -n "Windows 10 theme (Light) Installed Successfully"
    sleep 3
-    ;;
+   ;;
 2)
    echo -n "Installing Windows 10 theme (Dark) ..."
 
@@ -265,8 +266,6 @@ esac
 clear
 sleep 2
 
-echo -e "\e[32m[âœ“] Boxvidra Emulator Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Boxvidra Emulator Installed Successfully.\e[0m"
 echo -e "\n"
 echo "Type \"boxvidra\" To Start"
-
-
